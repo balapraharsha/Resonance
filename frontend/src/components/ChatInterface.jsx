@@ -63,7 +63,8 @@ const ChatInterface = ({ peer, emotionalData, onChatEnd }) => {
 
     try {
       // Generate peer response
-      const response = await axios.post('/api/generate-response', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const response = await axios.post(`${API_URL}/api/generate-response`, {
         userMessage: input.trim(),
         peer: peer,
         emotionalContext: emotionalData,
