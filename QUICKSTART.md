@@ -45,49 +45,6 @@ Visit: http://localhost:5173
 
 ---
 
-## Test & Demo Prep
-
-```bash
-# Run comprehensive tests
-./test-and-prep.sh
-```
-
-This will:
-- ✅ Check all dependencies
-- ✅ Verify environment config
-- ✅ Build frontend
-- ✅ Test backend API
-- ✅ Create demo scripts
-- ✅ Generate backup instructions
-
----
-
-## Deploy to AWS
-
-```bash
-# Automated deployment
-./deploy-aws.sh
-
-# Follow prompts to choose deployment method
-```
-
-Options:
-1. Amplify (Frontend) + Elastic Beanstalk (Backend) - **Recommended**
-2. EC2 Instance
-3. Docker on EC2
-
----
-
-## Hackathon Submission
-
-1. **Test locally**: `./test-and-prep.sh`
-2. **Deploy**: `./deploy-aws.sh`
-3. **Record demo**: See `backup-demo.md`
-4. **Fill submission**: Use `SUBMISSION.md` as guide
-5. **Submit**: Before T+22:00!
-
----
-
 ## Need Help?
 
 **Documentation:**
