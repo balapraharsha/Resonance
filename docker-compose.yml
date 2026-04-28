@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - PORT=3001
+    restart: unless-stopped
+    networks:
+      - resonance-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - resonance-network
+
+networks:
+  resonance-network:
+    driver: bridge
