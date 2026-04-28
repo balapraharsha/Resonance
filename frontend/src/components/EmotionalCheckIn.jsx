@@ -55,7 +55,8 @@ const EmotionalCheckIn = ({ onSubmit, onCrisisDetected }) => {
     setError('');
 
     try {
-      const response = await axios.post('/api/analyze-emotion', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+   const response = await axios.post(`${API_URL}/api/analyze-emotion`, {
         input: input.trim()
       });
 
