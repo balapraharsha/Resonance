@@ -14,7 +14,8 @@ const PostChatReflection = ({ emotionalData, onComplete }) => {
 
   const generateReflection = async () => {
     try {
-      const response = await axios.post('/api/generate-reflection', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const response = await axios.post(`${API_URL}/api/generate-reflection`, {
         beforeEmotion: emotionalData,
         afterRating: currentFeeling
       });
